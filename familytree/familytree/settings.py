@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_neomodel',
+    'tree.apps.TreeConfig'
 ]
 
 MIDDLEWARE = [
@@ -80,6 +82,16 @@ DATABASES = {
     }
 }
 
+NEOMODEL_NEO4J_BOLT_URL = \
+    os.environ.get('NEO4J_BOLT_URL',
+                   'bolt://webapp:b.2QPHrvjlRLEs.eJi4OADzbmNlXKYH@hobby'
+                   '-jfahefbeccflgbkeikackbel.dbs.graphenedb.com'
+                   ':24787')
+
+NEOMODEL_NEO4J_USERNAME = 'webapp'
+NEOMODEL_NEO4J_PASSWORD = 'b.2QPHrvjlRLEs.eJi4OADzbmNlXKYH'
+
+NEOMODEL_ENCRYPTED_CONNECTION = True
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
